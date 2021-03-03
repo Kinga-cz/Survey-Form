@@ -10,7 +10,23 @@ body::before {
     position: fixed;
     top: 0;
     right: 0;
-    background-image: url("img/Trianglify-10s-1920px.svg");
-    background-repeat: no-repeat;
+    background-image: linear-gradient(to right, #65dfc9, #6cdbeb);
+    /* background-image: url("img/Trianglify-10s-1920px.svg");
+    background-repeat: no-repeat; */
     z-index: -100;
 }
+
+/* input+label::after {
+    content: 'click my input';
+    color: black;
+}
+
+input:focus+label::after {
+    content: 'not valid yet';
+    color: red;
+}
+
+input:valid+label::after {
+    content: 'looks good';
+    color: green;
+} */
