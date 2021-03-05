@@ -1,6 +1,7 @@
 html, body {
     box-sizing: border-box;
     margin: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 body::before {
@@ -14,6 +15,114 @@ body::before {
     /* background-image: url("img/Trianglify-10s-1920px.svg");
     background-repeat: no-repeat; */
     z-index: -100;
+}
+
+textarea, input, #dropdown {
+    font-family: inherit;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #658ec6;
+    border: solid 1px white;
+    box-shadow: 0px 0px 0px rgba(122, 122, 122, 0.212);
+    transition: box-shadow ease 0.8s;
+}
+
+textarea:focus, input:focus, #dropdown {
+    outline: none;
+    border: solid 2px rgb(101, 223, 201, 0.8);
+    box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212)
+}
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #658ec6;
+    opacity: 0.7;
+    /* Firefox */
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3% 0 3% 0;
+}
+
+#header {
+    color: #426696;
+    padding: 0 3rem 0 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* background: white;
+    background: linear-gradient( to right bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.5));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    /* popraw color, size, font, weight ....  */
+}
+
+.icon {
+    max-height: 10rem;
+    max-width: 10rem;
+}
+
+#title {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+#description {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.glass-card {
+    /* height: 90vh; */
+    width: 100%;
+    background: linear-gradient( to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+    backdrop-filter: blur(10px);
+    z-index: 2;
+    border-radius: 3rem;
+    box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212)
+    /* border: solid 2px white; */
+}
+
+#header {
+    background: linear-gradient( to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+    border-radius: 3rem 3rem 0 0;
+}
+
+#survey-form {
+    color: #658ec6;
+    padding: 3rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.circle {
+    background: white;
+    background: linear-gradient( to right bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.circle1 {
+    top: 15%;
+    left: 20%;
+}
+
+.circle2 {
+    bottom: 5%;
+    right: 25%;
 }
 
 /* input+label::after {

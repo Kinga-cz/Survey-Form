@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> -->
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- my style -->
     <link rel="stylesheet" href="style.css">
     <title>Survey Form</title>
 </head>
@@ -14,13 +20,18 @@
 <body>
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
     <div id="container">
-        <div id="header">
-            <h1 id="title">Form</h1>
-            <p id="description">Thank you for taking your time &#128521</p>
-        </div>
-        <div id="glass-card">
+
+        <div class="glass-card">
+            <div id="header">
+                <div id="header-content">
+                    <h1 id="title">Survey Form</h1>
+                    <p id="description">Thank you for taking your time</p>
+                </div>
+                <img class="icon" src="./img/undraw_uploading_go67.svg">
+            </div>
             <form action="#" id="survey-form">
-                <div class="form-group"> <input type="text" name="name" id="name" required placeholder="Name">
+                <div class="form-group"> <input autocomplete="random-string" type="text" name="name" id="name" required
+                        placeholder="Name">
                     <label id="name-label" for="name">First name</label>
                 </div>
                 <div class="form-group"><input type="email" name="email" id="email" required placeholder="Email">
@@ -42,12 +53,10 @@
                 </div>
                 <div class="form-group">
                     <p>Please select your gender:</p>
-                    <input type="radio" id="male" name="gender" value="male">
-                    <label for="male">Male</label><br>
-                    <input type="radio" id="female" name="gender" value="female">
-                    <label for="female">Female</label><br>
-                    <input type="radio" id="other" name="gender" value="other">
-                    <label for="other">Other</label>
+
+                    <label for="male"><input type="radio" id="male" name="gender" value="male">Male</label>
+                    <label for="female"><input type="radio" id="female" name="gender" value="female">Female</label>
+                    <label for="other"><input type="radio" id="other" name="gender" value="other">Other</label>
                 </div>
                 <div class="form-group">
                     <p>Second question</p>
@@ -68,12 +77,17 @@
                 <!-- nonnumber HTML5 validation error -->
                 <!-- min max attributte - HTML5 validation error -->
             </form>
-        </div>
 
+        </div>
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
     </div>
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
         crossorigin="anonymous"></script> -->
+    <!-- <script>
+        $('input').attr('autocomplete', 'rutjfkde');
+    </script> -->
 </body>
 
 </html>
