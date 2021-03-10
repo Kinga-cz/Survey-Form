@@ -2,6 +2,7 @@ html, body {
     box-sizing: border-box;
     margin: 0;
     font-family: 'Poppins', sans-serif;
+    position: relative;
 }
 
 body::before {
@@ -17,34 +18,97 @@ body::before {
     z-index: -100;
 }
 
-textarea, input, #dropdown {
+/* animation input */
+
+.special-input {
+    padding-top: 20px;
+    display: block;
+    flex: 1;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #426696;
+}
+
+.special-label {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: solid 1px white;
+}
+
+.special-label::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-bottom: solid 2px rgb(101, 223, 201, 0.8);
+    transform: translateX(-100%);
+    transition: all ease-in-out 2s;
+}
+
+.special-label .label-content {
+    position: absolute;
+    bottom: 0px;
+    transition: all ease-in-out 0.5s;
+}
+
+.special-input:focus+.special-label .label-content, .special-input:valid+.special-label .label-content {
+    transform: translateY(-100%);
+}
+
+.special-input:focus+.special-label::after, .special-input:valid+.special-label::after {
+    transform: translateX(0%);
+}
+
+/* .... */
+
+textarea, input:not(#submit), select {
     font-family: inherit;
     font-weight: 400;
     letter-spacing: 1px;
-    color: #658ec6;
-    border: solid 1px white;
-    box-shadow: 0px 0px 0px rgba(122, 122, 122, 0.212);
-    transition: box-shadow ease 0.8s;
 }
 
-textarea:focus, input:focus, #dropdown {
+textarea, input-radio, input-checkbox, #dropdown {
+    color: #426696;
+    border: solid 1px white;
+    box-shadow: 0px 0px 0px rgba(122, 122, 122, 0.212);
+    transition: box-shadow, ease 0.8s;
+    padding: 0.5rem;
+}
+
+textarea:focus, input:not(#submit):focus, select:focus {
     outline: none;
+}
+
+textarea:focus, #dropdown:focus {
     border: solid 2px rgb(101, 223, 201, 0.8);
     box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212)
 }
 
-::placeholder {
-    /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #658ec6;
-    opacity: 0.7;
-    /* Firefox */
+textarea {
+    min-height: 120px;
+    resize: vertical;
 }
+
+/* animation input */
+
+::placeholder {
+    color: transparent;
+}
+
+/* animation input */
 
 #container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 40%;
+    width: 50%;
     margin-left: auto;
     margin-right: auto;
     padding: 3% 0 3% 0;
@@ -104,6 +168,21 @@ textarea:focus, input:focus, #dropdown {
 .form-group {
     display: flex;
     flex-direction: column;
+    margin: 2%;
+    min-height: 50px;
+    /* animation input */
+    position: relative;
+    /* animation input */
+    /* min-height: 4rem;*/
+    /* justify-content: space-around; */
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+p {
+    margin: 0.5rem 0 0.5rem 0
 }
 
 .circle {
@@ -117,13 +196,35 @@ textarea:focus, input:focus, #dropdown {
 
 .circle1 {
     top: 15%;
-    left: 20%;
+    left: 15%;
 }
 
 .circle2 {
-    bottom: 5%;
-    right: 25%;
+    bottom: 10%;
+    right: 20%;
 }
+
+#submit {
+    background: rgb(66, 102, 150, 0.4);
+    -webkit-border-radius: 8;
+    -moz-border-radius: 8;
+    border-radius: 8px;
+    font-family: inherit;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    border: none;
+    box-shadow: inset 0 10px 20px rgba(255, 255, 255, 0.20), inset 0 -15px 30px rgba(0, 0, 0, 0.25);
+    transition: all ease-in-out 1s;
+    cursor: pointer;
+}
+
+#submit:hover {
+    background: rgb(101, 223, 201, 0.8);
+    color: #426696;
+}
+
+/* walidacja, zabawa : */
 
 /* input+label::after {
     content: 'click my input';
@@ -139,3 +240,7 @@ input:valid+label::after {
     content: 'looks good';
     color: green;
 } */
+
+/* do zrobienia: */
+
+/* walidacje, stylizacja buttona, responsywność dla mobile, powiekszyc checkbox i radio, i defaktoryzacja, wielkośc czcionek, paddingi/odstępy */
