@@ -5,13 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> -->
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- my style -->
     <link rel="stylesheet" href="style.css">
     <title>Survey Form</title>
@@ -30,30 +26,30 @@
                 <img class="icon" src="./img/undraw_uploading_go67.svg">
             </div>
             <form action="#" id="survey-form">
-                <!-- animation input name (brak: placeholder, max, min)-->
-                <div class="form-group overflow-hidden"> <input class="special-input" autocomplete="off" type="text"
-                        name="name" id="name" required>
+                <!-- animation input name -->
+                <div class="form-group overflow-hidden"> <input placeholder="Name" class="special-input"
+                        autocomplete="off" type="text" name="name" id="name" required>
                     <label class="special-label" id="name-label" for="name">
                         <span class="label-content">First name</span>
                     </label>
                 </div>
                 <!-- -->
                 <!-- animation input email -->
-                <div class="form-group overflow-hidden"><input autocomplete="off" class="special-input" type="email"
-                        name="email" id="email" required>
+                <div class="form-group overflow-hidden"><input placeholder="Email" autocomplete="off"
+                        class="special-input" type="email" name="email" id="email" required>
                     <label class="special-label" id="email-label" for="email">
                         <span class="label-content">Your email</span>
                     </label>
                 </div>
                 <!--  -->
                 <!-- animation input number -->
-                <div class="form-group overflow-hidden"><input autocomplete="off" class="special-input" type="number"
-                        name="age" id="number" required>
-                    <label class="special-label" id="age-label" for="number">
+                <div class="form-group overflow-hidden"><input min="1" max="99" placeholder="Age" autocomplete="off"
+                        class="special-input" type="number" name="age" id="number" required>
+                    <label class="special-label" id="number-label" for="age">
                         <span class="label-content">Your age</span>
                     </label>
                 </div>
-                <!--  -->
+                <!-- old input: -->
                 <!-- <div class="form-group"> <input autocomplete="random-string" type="text" name="name" id="name" required
                         placeholder="Name">
                     <label id="name-label" for="name">First name</label>
@@ -101,22 +97,13 @@
                     <textarea name="comment" placeholder="Enter text here..."></textarea>
                 </div>
                 <div class="form-group"><input id="submit" type="submit" value="submit"></div>
-                <!-- if I enter an email that is not formatted correctly, I will see an HTML5 validation error -->
-
-                <!-- nonnumber HTML5 validation error -->
-                <!-- min max attributte - HTML5 validation error -->
             </form>
 
         </div>
         <div class="circle circle1"></div>
         <div class="circle circle2"></div>
     </div>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-        crossorigin="anonymous"></script> -->
-    <!-- <script>
-        $('input').attr('autocomplete', 'rutjfkde');
-    </script> -->
+
 </body>
 
 </html>

@@ -18,6 +18,106 @@ body::before {
     z-index: -100;
 }
 
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3% 0 3% 0;
+}
+
+.glass-card {
+    /* height: 90vh; */
+    width: 100%;
+    background: linear-gradient( to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+    backdrop-filter: blur(10px);
+    z-index: 2;
+    border-radius: 3rem;
+    box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212)
+    /* border: solid 2px white; */
+}
+
+#survey-form {
+    font-size: 17px;
+    color: #658ec6;
+    padding: 2rem 3.5rem 3.5rem 3.5rem;
+}
+
+#header {
+    color: #426696;
+    padding: 0 3.5rem 0 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background: linear-gradient( to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+    border-radius: 3rem 3rem 0 0;
+    /* background: white;
+    background: linear-gradient( to right bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.5));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    /* popraw color, size, font, weight ....  */
+}
+
+#title {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 1rem 0 1rem 0;
+}
+
+.icon {
+    max-height: 10rem;
+    max-width: 10rem;
+}
+
+#description {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 2% 0 2% 0;
+    min-height: 50px;
+    /* animation input */
+    position: relative;
+    /* animation input */
+    /* min-height: 4rem;*/
+    /* justify-content: space-around; */
+}
+
+p {
+    font-weight: 600;
+}
+
+textarea, input:not(#submit), select {
+    font-family: inherit;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #658ec6;
+    font-size: 16px;
+}
+
+textarea:focus, input:not(#submit):focus, select:focus {
+    outline: none;
+}
+
+::placeholder {
+    color: transparent;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+p {
+    margin: 0.5rem 0 0.5rem 0
+}
+
 /* animation input */
 
 .special-input {
@@ -27,7 +127,7 @@ body::before {
     background-color: transparent;
     border: none;
     outline: none;
-    color: #426696;
+    padding-left: 0.25rem;
 }
 
 .special-label {
@@ -38,6 +138,7 @@ body::before {
     height: 100%;
     pointer-events: none;
     border-bottom: solid 1px white;
+    font-weight: 600;
 }
 
 .special-label::after {
@@ -68,22 +169,26 @@ body::before {
 
 /* .... */
 
-textarea, input:not(#submit), select {
-    font-family: inherit;
-    font-weight: 400;
-    letter-spacing: 1px;
+.label-radio, .label-checkbox {
+    margin: 0.2rem 0 0.2rem 0;
+    display: flex;
+    align-items: center;
 }
 
-textarea, input-radio, input-checkbox, #dropdown {
-    color: #426696;
+.input-radio, .input-checkbox {
+    margin-right: 0.3rem;
+    min-height: 1rem;
+    min-width: 1rem;
+}
+
+textarea, #dropdown {
     border: solid 1px white;
     box-shadow: 0px 0px 0px rgba(122, 122, 122, 0.212);
     transition: box-shadow, ease 0.8s;
-    padding: 0.5rem;
 }
 
-textarea:focus, input:not(#submit):focus, select:focus {
-    outline: none;
+#dropdown {
+    padding: 0.3rem 0 0.3rem 0;
 }
 
 textarea:focus, #dropdown:focus {
@@ -94,95 +199,7 @@ textarea:focus, #dropdown:focus {
 textarea {
     min-height: 120px;
     resize: vertical;
-}
-
-/* animation input */
-
-::placeholder {
-    color: transparent;
-}
-
-/* animation input */
-
-#container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 3% 0 3% 0;
-}
-
-#header {
-    color: #426696;
-    padding: 0 3rem 0 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    /* background: white;
-    background: linear-gradient( to right bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.5));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; */
-    /* popraw color, size, font, weight ....  */
-}
-
-.icon {
-    max-height: 10rem;
-    max-width: 10rem;
-}
-
-#title {
-    margin: 0;
-    font-size: 3rem;
-    font-weight: 700;
-}
-
-#description {
-    font-size: 1rem;
-    font-weight: 400;
-}
-
-.glass-card {
-    /* height: 90vh; */
-    width: 100%;
-    background: linear-gradient( to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
-    backdrop-filter: blur(10px);
-    z-index: 2;
-    border-radius: 3rem;
-    box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212)
-    /* border: solid 2px white; */
-}
-
-#header {
-    background: linear-gradient( to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
-    border-radius: 3rem 3rem 0 0;
-}
-
-#survey-form {
-    color: #658ec6;
-    padding: 3rem;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    margin: 2%;
-    min-height: 50px;
-    /* animation input */
-    position: relative;
-    /* animation input */
-    /* min-height: 4rem;*/
-    /* justify-content: space-around; */
-}
-
-.overflow-hidden {
-    overflow: hidden;
-}
-
-p {
-    margin: 0.5rem 0 0.5rem 0
+    padding: 0.25rem;
 }
 
 .circle {
@@ -192,16 +209,6 @@ p {
     height: 15rem;
     border-radius: 50%;
     position: absolute;
-}
-
-.circle1 {
-    top: 15%;
-    left: 15%;
-}
-
-.circle2 {
-    bottom: 10%;
-    right: 20%;
 }
 
 #submit {
@@ -224,6 +231,18 @@ p {
     color: #426696;
 }
 
+.circle1 {
+    top: 15%;
+    left: 15%;
+}
+
+.circle2 {
+    bottom: 10%;
+    right: 20%;
+}
+
+/* https://autoprefixer.github.io/ */
+
 /* walidacja, zabawa : */
 
 /* input+label::after {
@@ -243,4 +262,6 @@ input:valid+label::after {
 
 /* do zrobienia: */
 
-/* walidacje, stylizacja buttona, responsywność dla mobile, powiekszyc checkbox i radio, i defaktoryzacja, wielkośc czcionek, paddingi/odstępy */
+/* responsywność dla mobile, dodaj zmienne: kolor, czcionka, font-weight, padding input-special, zmien nazwe input-special=>input-animation, cross-browser */
+
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/@supports,  https://stackoverflow.com/questions/38145368/css-workaround-to-backdrop-filter*/
