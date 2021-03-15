@@ -1,8 +1,17 @@
+:root {
+    --main-font-size: 17px;
+    --submit-font-size: 20px;
+    --header-color: #426696;
+    --content-color: #658ec6;
+    --content-color-input: #658ec6;
+}
+
 html, body {
     box-sizing: border-box;
     margin: 0;
     font-family: 'Poppins', sans-serif;
     position: relative;
+    font-size: var(--main-font-size);
 }
 
 body::before {
@@ -13,8 +22,6 @@ body::before {
     top: 0;
     right: 0;
     background-image: linear-gradient(to right, #65dfc9, #6cdbeb);
-    /* background-image: url("img/Trianglify-10s-1920px.svg");
-    background-repeat: no-repeat; */
     z-index: -100;
 }
 
@@ -22,31 +29,28 @@ body::before {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
     padding: 3% 0 3% 0;
 }
 
 .glass-card {
-    /* height: 90vh; */
     width: 100%;
     background: linear-gradient( to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
     backdrop-filter: blur(10px);
     z-index: 2;
     border-radius: 3rem;
     box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212)
-    /* border: solid 2px white; */
 }
 
 #survey-form {
-    font-size: 17px;
-    color: #658ec6;
+    color: var(--content-color);
     padding: 2rem 3.5rem 3.5rem 3.5rem;
 }
 
 #header {
-    color: #426696;
+    color: var(--header-color);
     padding: 0 3.5rem 0 3.5rem;
     display: flex;
     align-items: center;
@@ -54,11 +58,6 @@ body::before {
     flex-wrap: wrap;
     background: linear-gradient( to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
     border-radius: 3rem 3rem 0 0;
-    /* background: white;
-    background: linear-gradient( to right bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.5));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; */
-    /* popraw color, size, font, weight ....  */
 }
 
 #title {
@@ -83,11 +82,7 @@ body::before {
     flex-direction: column;
     margin: 2% 0 2% 0;
     min-height: 50px;
-    /* animation input */
     position: relative;
-    /* animation input */
-    /* min-height: 4rem;*/
-    /* justify-content: space-around; */
 }
 
 p {
@@ -98,8 +93,8 @@ textarea, input:not(#submit), select {
     font-family: inherit;
     font-weight: 400;
     letter-spacing: 1px;
-    color: #658ec6;
-    font-size: 16px;
+    color: var(--content-color-input);
+    font-size: 0.9rem;
 }
 
 textarea:focus, input:not(#submit):focus, select:focus {
@@ -120,17 +115,16 @@ p {
 
 /* animation input */
 
-.special-input {
+.animation-input {
     padding-top: 20px;
     display: block;
     flex: 1;
     background-color: transparent;
     border: none;
-    outline: none;
     padding-left: 0.25rem;
 }
 
-.special-label {
+.animation-label {
     position: absolute;
     bottom: 0px;
     left: 0px;
@@ -141,29 +135,29 @@ p {
     font-weight: 600;
 }
 
-.special-label::after {
+.animation-label::after {
     content: "";
     position: absolute;
     top: 0px;
     left: 0px;
     width: 100%;
     height: 100%;
-    border-bottom: solid 2px rgb(101, 223, 201, 0.8);
+    border-bottom: solid 2px rgba(101, 223, 201, 0.8);
     transform: translateX(-100%);
     transition: all ease-in-out 2s;
 }
 
-.special-label .label-content {
+.animation-label .label-content {
     position: absolute;
     bottom: 0px;
     transition: all ease-in-out 0.5s;
 }
 
-.special-input:focus+.special-label .label-content, .special-input:valid+.special-label .label-content {
+.animation-input:focus+.animation-label .label-content, .animation-input:valid+.animation-label .label-content {
     transform: translateY(-100%);
 }
 
-.special-input:focus+.special-label::after, .special-input:valid+.special-label::after {
+.animation-input:focus+.animation-label::after, .animation-input:valid+.animation-label::after {
     transform: translateX(0%);
 }
 
@@ -192,7 +186,7 @@ textarea, #dropdown {
 }
 
 textarea:focus, #dropdown:focus {
-    border: solid 2px rgb(101, 223, 201, 0.8);
+    border: solid 2px rgba(101, 223, 201, 0.8);
     box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212)
 }
 
@@ -200,6 +194,26 @@ textarea {
     min-height: 120px;
     resize: vertical;
     padding: 0.25rem;
+}
+
+#submit {
+    background: rgba(66, 102, 150, 0.4);
+    -webkit-border-radius: 8;
+    -moz-border-radius: 8;
+    border-radius: 8px;
+    font-family: inherit;
+    color: #ffffff;
+    font-size: var(--submit-font-size);
+    padding: 10px 20px 10px 20px;
+    border: none;
+    box-shadow: inset 0 10px 20px rgba(255, 255, 255, 0.20), inset 0 -15px 30px rgba(0, 0, 0, 0.25);
+    transition: all ease-in-out 1s;
+    cursor: pointer;
+}
+
+#submit:hover {
+    background: rgba(101, 223, 201, 0.8);
+    color: var(--header-color);
 }
 
 .circle {
@@ -211,35 +225,80 @@ textarea {
     position: absolute;
 }
 
-#submit {
-    background: rgb(66, 102, 150, 0.4);
-    -webkit-border-radius: 8;
-    -moz-border-radius: 8;
-    border-radius: 8px;
-    font-family: inherit;
-    color: #ffffff;
-    font-size: 20px;
-    padding: 10px 20px 10px 20px;
-    border: none;
-    box-shadow: inset 0 10px 20px rgba(255, 255, 255, 0.20), inset 0 -15px 30px rgba(0, 0, 0, 0.25);
-    transition: all ease-in-out 1s;
-    cursor: pointer;
-}
-
-#submit:hover {
-    background: rgb(101, 223, 201, 0.8);
-    color: #426696;
-}
-
 .circle1 {
     top: 15%;
-    left: 15%;
+    left: 10%;
 }
 
 .circle2 {
     bottom: 10%;
-    right: 20%;
+    right: 10%;
 }
+
+@media (min-width: 1200px) {
+    #container {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    #container {
+        width: 80%;
+    }
+    .circle1 {
+        left: 5%;
+    }
+    .circle2 {
+        right: 5%;
+    }
+}
+
+@media only screen and (max-width: 791px) {
+    #container {
+        width: 90%;
+    }
+    .circle1 {
+        left: 2%;
+    }
+    .circle2 {
+        right: 2%;
+    }
+}
+
+@media only screen and (max-width: 704px) {
+    #container {
+        width: 90%;
+    }
+    .icon {
+        display: none;
+    }
+    #survey-form {
+        padding: 1.5rem 2.5rem 2.5rem 2.5rem;
+    }
+    #header {
+        padding: 0 2.5rem 0 2.5rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #container {
+        width: 99%;
+    }
+    .icon {
+        display: none;
+    }
+    #survey-form {
+        padding: 1.5rem 2.5rem 2.5rem 2.5rem;
+    }
+    #header {
+        padding: 0 2.5rem 0 2.5rem;
+    }
+    .circle {
+        display: none;
+    }
+}
+
+/*  */
 
 /* https://autoprefixer.github.io/ */
 
@@ -262,6 +321,6 @@ input:valid+label::after {
 
 /* do zrobienia: */
 
-/* responsywność dla mobile, dodaj zmienne: kolor, czcionka, font-weight, padding input-special, zmien nazwe input-special=>input-animation, cross-browser */
+/* cross-browser */
 
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/@supports,  https://stackoverflow.com/questions/38145368/css-workaround-to-backdrop-filter*/
