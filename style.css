@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 :root {
     --main-font-size: 17px;
     --submit-font-size: 20px;
@@ -7,11 +14,12 @@
 }
 
 html, body {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0;
     font-family: 'Poppins', sans-serif;
     position: relative;
-    font-size: var(--main-font-size);
+    font-size: var(--main-font-size, 17px);
 }
 
 body::before {
@@ -21,13 +29,22 @@ body::before {
     position: fixed;
     top: 0;
     right: 0;
+    background-image: -webkit-gradient(linear, left top, right top, from(#65dfc9), to(#6cdbeb));
+    background-image: -o-linear-gradient(left, #65dfc9, #6cdbeb);
     background-image: linear-gradient(to right, #65dfc9, #6cdbeb);
     z-index: -100;
 }
 
 #container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     width: 70%;
     margin-left: auto;
@@ -37,25 +54,38 @@ body::before {
 
 .glass-card {
     width: 100%;
+    background: -webkit-gradient( linear, left top, right bottom, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0.3)));
+    background: -o-linear-gradient( left top, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
     background: linear-gradient( to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     z-index: 2;
     border-radius: 3rem;
+    -webkit-box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
     box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212)
 }
 
 #survey-form {
-    color: var(--content-color);
+    color: var(--content-color, #658ec6);
     padding: 2rem 3.5rem 3.5rem 3.5rem;
 }
 
 #header {
-    color: var(--header-color);
+    color: var(--header-color, #426696);
     padding: 0 3.5rem 0 3.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    background: -webkit-gradient( linear, left top, right bottom, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0.3)));
+    background: -o-linear-gradient( left top, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
     background: linear-gradient( to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
     border-radius: 3rem 3rem 0 0;
 }
@@ -78,7 +108,12 @@ body::before {
 }
 
 .form-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     margin: 2% 0 2% 0;
     min-height: 50px;
@@ -93,12 +128,28 @@ textarea, input:not(#submit), select {
     font-family: inherit;
     font-weight: 400;
     letter-spacing: 1px;
-    color: var(--content-color-input);
+    color: var(--content-color-input, #658ec6);
     font-size: 0.9rem;
 }
 
 textarea:focus, input:not(#submit):focus, select:focus {
     outline: none;
+}
+
+::-webkit-input-placeholder {
+    color: transparent;
+}
+
+::-moz-placeholder {
+    color: transparent;
+}
+
+:-ms-input-placeholder {
+    color: transparent;
+}
+
+::-ms-input-placeholder {
+    color: transparent;
 }
 
 ::placeholder {
@@ -118,6 +169,8 @@ p {
 .animation-input {
     padding-top: 20px;
     display: block;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
     flex: 1;
     background-color: transparent;
     border: none;
@@ -143,21 +196,31 @@ p {
     width: 100%;
     height: 100%;
     border-bottom: solid 2px rgba(101, 223, 201, 0.8);
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
     transform: translateX(-100%);
+    -webkit-transition: all ease-in-out 2s;
+    -o-transition: all ease-in-out 2s;
     transition: all ease-in-out 2s;
 }
 
 .animation-label .label-content {
     position: absolute;
     bottom: 0px;
+    -webkit-transition: all ease-in-out 0.5s;
+    -o-transition: all ease-in-out 0.5s;
     transition: all ease-in-out 0.5s;
 }
 
 .animation-input:focus+.animation-label .label-content, .animation-input:valid+.animation-label .label-content {
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
     transform: translateY(-100%);
 }
 
 .animation-input:focus+.animation-label::after, .animation-input:valid+.animation-label::after {
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
     transform: translateX(0%);
 }
 
@@ -165,7 +228,11 @@ p {
 
 .label-radio, .label-checkbox {
     margin: 0.2rem 0 0.2rem 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -177,8 +244,13 @@ p {
 
 textarea, #dropdown {
     border: solid 1px white;
+    -webkit-box-shadow: 0px 0px 0px rgba(122, 122, 122, 0.212);
     box-shadow: 0px 0px 0px rgba(122, 122, 122, 0.212);
+    -webkit-transition: ease 0.8s, -webkit-box-shadow;
+    transition: ease 0.8s, -webkit-box-shadow;
+    -o-transition: box-shadow, ease 0.8s;
     transition: box-shadow, ease 0.8s;
+    transition: box-shadow, ease 0.8s, -webkit-box-shadow;
 }
 
 #dropdown {
@@ -187,6 +259,7 @@ textarea, #dropdown {
 
 textarea:focus, #dropdown:focus {
     border: solid 2px rgba(101, 223, 201, 0.8);
+    -webkit-box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
     box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212)
 }
 
@@ -198,26 +271,29 @@ textarea {
 
 #submit {
     background: rgba(66, 102, 150, 0.4);
-    -webkit-border-radius: 8;
-    -moz-border-radius: 8;
     border-radius: 8px;
     font-family: inherit;
     color: #ffffff;
-    font-size: var(--submit-font-size);
+    font-size: var(--submit-font-size, 20px);
     padding: 10px 20px 10px 20px;
     border: none;
+    -webkit-box-shadow: inset 0 10px 20px rgba(255, 255, 255, 0.20), inset 0 -15px 30px rgba(0, 0, 0, 0.25);
     box-shadow: inset 0 10px 20px rgba(255, 255, 255, 0.20), inset 0 -15px 30px rgba(0, 0, 0, 0.25);
+    -webkit-transition: all ease-in-out 1s;
+    -o-transition: all ease-in-out 1s;
     transition: all ease-in-out 1s;
     cursor: pointer;
 }
 
 #submit:hover {
     background: rgba(101, 223, 201, 0.8);
-    color: var(--header-color);
+    color: var(--header-color, #426696);
 }
 
 .circle {
     background: white;
+    background: -webkit-gradient( linear, left top, right bottom, from(rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.3)));
+    background: -o-linear-gradient( left top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
     background: linear-gradient( to right bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
     width: 15rem;
     height: 15rem;
@@ -297,30 +373,3 @@ textarea {
         display: none;
     }
 }
-
-/*  */
-
-/* https://autoprefixer.github.io/ */
-
-/* walidacja, zabawa : */
-
-/* input+label::after {
-    content: 'click my input';
-    color: black;
-}
-
-input:focus+label::after {
-    content: 'not valid yet';
-    color: red;
-}
-
-input:valid+label::after {
-    content: 'looks good';
-    color: green;
-} */
-
-/* do zrobienia: */
-
-/* cross-browser */
-
-/* https://developer.mozilla.org/en-US/docs/Web/CSS/@supports,  https://stackoverflow.com/questions/38145368/css-workaround-to-backdrop-filter*/
